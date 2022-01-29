@@ -1,5 +1,4 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { fleurimondColors } from '../theme';
 
 export const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/

@@ -42,6 +42,11 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
+        exclude: /node_modules/,
+        use: ['file-loader?name=[name].[ext]'] // ?name=[name].[ext] is only necessary to preserve the original file name
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: [

@@ -55,10 +55,10 @@ const JFBanner = (props): JSX.Element => {
       >
         <div className="leftHalf">
           <Header className="BannerHeader" as="h1" pt={200} pl={100}>
-            Pokemon
+            Marvel
           </Header>
           <Header className="BannerHeader2" as="h2" pt={50} pl={100}>
-            Movesets
+            Characters
           </Header>
         </div>
 

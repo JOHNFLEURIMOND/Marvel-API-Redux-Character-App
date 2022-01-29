@@ -35,9 +35,9 @@ app.get('/backend/api', async (req, res) => {
   const api_url = `http://gateway.marvel.com/v1/public/characters?ts=${timeStamp}&apikey=${apikeyPublic}&hash=${hash}&orderBy=name&limit=${limit}&offset=${offset}`;
   const fetch_response = await fetch(api_url)
   const json = await fetch_response.json();
-  res.json(json)
+  res.json(json.data.results)
   const answer = res.json(json)
-console.log(answer)
+  console.log(answer.data.results)
 });
 
 app.use(bodyParser.json()); // get information from html forms

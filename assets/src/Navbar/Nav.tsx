@@ -14,7 +14,6 @@ const baseNavStyles = css({
   height: "10vw",
   color: fleurimondColors.leapingLemon,
   textAlign: "center",
-  position: "fixed",
   width: "100vw",
   backgroundColor: fleurimondColors.buttons.darkBlue,
   minHeight: "5vh",
@@ -62,6 +61,8 @@ const baseNavStyles = css({
     width: "50%",
   },
   "*": {
+    margin: 0,
+    padding: 0,
     fontFamily: "Montserrat, sans-serif",
   },
 });

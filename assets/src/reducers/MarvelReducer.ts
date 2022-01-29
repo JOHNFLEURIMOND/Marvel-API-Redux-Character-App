@@ -8,7 +8,7 @@ import {
 
 export interface DefaultStateI {
   loading: boolean,
-  pokemon?: MarvelType
+  marvelCharacter?: MarvelType
 }
 
 export const defaultState: DefaultStateI = {
@@ -28,10 +28,10 @@ export const MarvelReducer = (state: DefaultStateI = defaultState, action: Marve
     case MARVEL_SUCCESS:
       return {
         loading: false,
-        pokemon: action.payload
+        marvelCharacter: action.payload
       }
-    default:
-      return state
+      default:
+        return state
   }
 };
 
