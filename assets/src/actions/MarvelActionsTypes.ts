@@ -9,20 +9,23 @@ export type MarvelType = {
 }
 
 export type MarvelCharacterAbility = {
-  ability: {
     name: string
-    url: string
-  }
+    description: string
 }
 
 export type MarvelCharacterSprites = {
-  front_default: string
+  thumbnail: {
+    path: string
+    extension: string
+  }
 }
 
 export type MarvelCharacterStat = {
-  base_stat: number,
-  stat: {
-    name: string
+  comics: {
+    items: {
+        resourceURI: string
+        name: string
+    }
   }
 }
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import { Animated } from "react-animated-css";
@@ -51,27 +51,10 @@ const baseBannerStyles = css({
 const JFBanner = (props): JSX.Element => {
   const dispatch = useDispatch();
   const [marvelCharacterName, setMarvelCharacterName] = useState("");
-  const [message, setMessage] = useState("");
-  const marvelState = useSelector((state: RootStore) => state.pokemon);
+  const marvelState = useSelector((state: RootStore) => state.marvelCharacter);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setMarvelCharacterName(event.target.value);
   const handleSubmit = () => dispatch(GetMarvelCharacter(marvelCharacterName));
-  console.log(setMessage);
 
-  useEffect(() => {
-    fetchData();
-  }, [])
-
-  const fetchData = async () => {
-    const result = await fetch(
-      "http://localhost:8080/backend/api"
-    );
-    const data = await result.json();
-    console.log("data", data);
-
-    setMessage(data);
-  };
-
-  console.log(setMessage)
   return (
     <Container {...props}>
       <Animated
@@ -82,10 +65,10 @@ const JFBanner = (props): JSX.Element => {
       >
         <div className="leftHalf">
           <Header className="BannerHeader" as="h1" pt={200} pl={100}>
-            Pokemon
+            Marvel
           </Header>
           <Header className="BannerHeader2" as="h2" pt={50} pl={100}>
-            Moveset
+            Characters
           </Header>
         </div>
 
@@ -96,17 +79,17 @@ const JFBanner = (props): JSX.Element => {
               <input
                 onChange={handleChange}
               />
-              <p> {message && JSON.stringify(message, null, 4)}</p>
               <button type="submit" onClick={handleSubmit}>
                 {console.log("????")}
                 submit
               </button>
-              {marvelState.pokemon && (
+              {marvelState.marvelCharacter && (
                 <div>
-                  <img src={marvelState.pokemon.sprites.front_default} alt="" />
-                  {marvelState.pokemon.abilities.map(ability => {
-                    return <p>{ability.ability.name}</p>
+                  <img src={marvelState.marvelCharacter.sprites.thumbnail.path} alt="" />
+                  {marvelState.marvelCharacter.abilities.map(results => {
+                    return <><p>{results.name}</p> <p>{results.description}</p></>
                   })}
+
                 </div>
               )}
             </div>
