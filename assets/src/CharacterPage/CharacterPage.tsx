@@ -3,11 +3,11 @@ import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import shouldForwardProp from "@styled-system/should-forward-prop";
 import { space, flexbox, typography } from "styled-system";
-import { Container } from "semantic-ui-react";
 import Nav from "../Navbar/Nav";
 import Footer from "../Footer/Footer";
 import SearchBar from "../SearchBar/SearchBar";
 import { fleurimondColors } from "../theme";
+import { GlobalStyle, Container } from '../layout/global-style';
 
 
 const baseBannerStyles = css({
@@ -39,6 +39,7 @@ const baseBannerStyles = css({
 const JFCharacterCards = (props: any): JSX.Element => {
   return (
     <Container {...props}>
+      <GlobalStyle />
       <Nav />
       <SearchBar />
       <Footer />

@@ -18,7 +18,7 @@ const baseNavStyles = css({
   backgroundColor: fleurimondColors.buttons.darkBlue,
   minHeight: "5vh",
   display: "flex",
-  padding: "20px",
+  padding: 0,
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
@@ -76,7 +76,7 @@ const JFNav = (props): JSX.Element => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/CharacterPage">Pokemon Movesets</Link>
+            <Link to="/CharacterPage">Heros & Villians</Link>
           </li>
           <li>
             <Link to="/SignUp">About Us</Link>
