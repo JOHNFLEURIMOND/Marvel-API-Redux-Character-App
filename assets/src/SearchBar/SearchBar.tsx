@@ -55,6 +55,7 @@ const JFBanner = (props): JSX.Element => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setMarvelCharacterName(event.target.value);
   const handleSubmit = () => dispatch(GetMarvelCharacter(marvelCharacterName));
 
+  { console.log("marvelState.marvelCharacter:  ", marvelState.marvelCharacter) }
   return (
     <Container {...props}>
       <Animated
@@ -80,13 +81,11 @@ const JFBanner = (props): JSX.Element => {
                 onChange={handleChange}
               />
               <button type="submit" onClick={handleSubmit}>
-                {console.log("????")}
                 submit
               </button>
               {marvelState.marvelCharacter && (
                 <div>
-                  <img src={marvelState.marvelCharacter.sprites.thumbnail.path} alt="" />
-                  {marvelState.marvelCharacter.abilities.map(results => {
+                  {marvelState.marvelCharacter.bio.map(results => {
                     return <><p>{results.name}</p> <p>{results.description}</p></>
                   })}
 

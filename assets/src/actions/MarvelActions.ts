@@ -5,24 +5,18 @@ import {
   MARVEL_SUCCESS,
   MarvelDispatchTypes,
 } from "./MarvelActionsTypes";
-import md5 from "js-md5";
-import uid2 from "uid2";
-
 
 export const GetMarvelCharacter = (Character: string) => async (dispatch: Dispatch<MarvelDispatchTypes>) => {
   try {
     dispatch({
       type: MARVEL_LOADING
     })
-    const apikeyPublic = "[REMOVED_MARVEL_API_CREDENTIAL]";
-    const apikeyPrivate = "[REMOVED_MARVEL_API_CREDENTIAL]";
-console.log(Character);
-let timeStamp = uid2(8);
-let hash = md5(timeStamp + apikeyPrivate + apikeyPublic);
-const api_url = `http://gateway.marvel.com/v1/public/characters?ts=${timeStamp}&apikey=${apikeyPublic}&hash=${hash}&orderBy=name&limit=${100}`;
+  
+const api_url = `http://localhost:8080/backend/api`;
 const fetch_response = await fetch(api_url)   
 const json = await fetch_response.json();
 console.log(Character);
+console.log(json.data);
     dispatch({
       type: MARVEL_SUCCESS,
       payload: json.data

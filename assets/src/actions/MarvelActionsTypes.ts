@@ -3,24 +3,24 @@ export const MARVEL_FAIL = "MARVEL_FAIL";
 export const MARVEL_SUCCESS = "MARVEL_SUCCESS";
 
 export type MarvelType = {
-  abilities: MarvelCharacterAbility[],
-  sprites: MarvelCharacterSprites,
-  stats: MarvelCharacterStat[]
+  bio: MarvelCharacterBio[],
+  thumbnail: MarvelCharacterThumbnail,
+  comics: MarvelCharactersComics[]
 }
 
-export type MarvelCharacterAbility = {
+export type MarvelCharacterBio = {
     name: string
     description: string
 }
 
-export type MarvelCharacterSprites = {
+export type MarvelCharacterThumbnail = {
   thumbnail: {
     path: string
     extension: string
   }
 }
 
-export type MarvelCharacterStat = {
+export type MarvelCharactersComics = {
   comics: {
     items: {
         resourceURI: string
@@ -41,5 +41,5 @@ export interface MarvelSuccess {
   type: typeof MARVEL_SUCCESS,
   payload: MarvelType
 }
-
+  
 export type MarvelDispatchTypes = MarvelLoading | MarvelFail | MarvelSuccess
