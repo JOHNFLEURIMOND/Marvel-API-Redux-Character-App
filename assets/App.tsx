@@ -6,7 +6,7 @@ import Footer from "./src/Footer/Footer";
 import Banner from "./src/Banner/Banner";
 import CharacterPage from "./src/CharacterPage/CharacterPage";
 import SignUp from "./src/SignUp/SignUp";
-import { GlobalStyle, Container } from './src/layout/global-style';
+import { GlobalStyle, Container } from "./src/layout/global-style";
 
 const Homepage = (): JSX.Element => {
   return (
