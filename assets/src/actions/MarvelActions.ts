@@ -1,4 +1,7 @@
 import { Dispatch } from "redux";
+import md5 from "js-md5";
+import uid2 from "uid2";
+import axios from 'axios';
 import {
   MARVEL_FAIL,
   MARVEL_LOADING,
@@ -6,20 +9,24 @@ import {
   MarvelDispatchTypes,
 } from "./MarvelActionsTypes";
 
-export const GetMarvelCharacter = (Character: string) => async (dispatch: Dispatch<MarvelDispatchTypes>) => {
+const apikeyPublic = "[REMOVED_MARVEL_API_CREDENTIAL]";
+const apikeyPrivate = "[REMOVED_MARVEL_API_CREDENTIAL]";
+
+export const GetMarvelCharacter = (characters: string) => async (dispatch: Dispatch<MarvelDispatchTypes>) => {
   try {
     dispatch({
+      characters,
       type: MARVEL_LOADING
     })
-  
-const api_url = `http://localhost:8080/backend/api`;
-const fetch_response = await fetch(api_url)   
-const json = await fetch_response.json();
-console.log(Character);
-console.log(json.data);
+    let timeStamp = uid2(8);
+    let hash = md5(timeStamp + apikeyPrivate + apikeyPublic);
+    const limit = 100;
+    const apiUrl = `http://gateway.marvel.com/v1/public/characters?name=${characters}&ts=${timeStamp}&apikey=[REMOVED_MARVEL_API_CREDENTIAL]&hash=${hash}&orderBy=name&limit=${limit}`;
+    const res = await axios.get(apiUrl);
+    console.log(res.data)
     dispatch({
       type: MARVEL_SUCCESS,
-      payload: json.data
+      payload: res.data
     })
 
   } catch (e) {

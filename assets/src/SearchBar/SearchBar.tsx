@@ -47,15 +47,17 @@ const baseBannerStyles = css({
   },
 });
 
-
-const JFBanner = (props): JSX.Element => {
+const SearchBar = (props): JSX.Element => {
   const dispatch = useDispatch();
   const [marvelCharacterName, setMarvelCharacterName] = useState("");
   const marvelState = useSelector((state: RootStore) => state.marvelCharacter);
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setMarvelCharacterName(event.target.value);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+    setMarvelCharacterName(event.target.value);
   const handleSubmit = () => dispatch(GetMarvelCharacter(marvelCharacterName));
 
-  { console.log("marvelState.marvelCharacter:  ", marvelState.marvelCharacter) }
+  {
+    console.log("marvelState.marvelCharacter:  ", marvelState);
+  }
   return (
     <Container {...props}>
       <Animated
@@ -76,19 +78,20 @@ const JFBanner = (props): JSX.Element => {
         <div className="rightHalf">
           <Container {...props}>
             <div className="    ">
-
-              <input
-                onChange={handleChange}
-              />
+              <input onChange={handleChange} />
               <button type="submit" onClick={handleSubmit}>
                 submit
               </button>
               {marvelState.marvelCharacter && (
                 <div>
-                  {marvelState.marvelCharacter.bio.map(results => {
-                    return <><p>{results.name}</p> <p>{results.description}</p></>
+                  {marvelState.marvelCharacter.bio.map((results) => {
+                    console.log("{results}", results);
+                    return (
+                      <>
+                        <p>{results.name}</p> <p>{results.description}</p>
+                      </>
+                    );
                   })}
-
                 </div>
               )}
             </div>
@@ -99,8 +102,8 @@ const JFBanner = (props): JSX.Element => {
   );
 };
 
-const JFBannerWithStyle = styled(JFBanner, {
+const SearchBarWithStyle = styled(SearchBar, {
   shouldForwardProp,
 })(baseBannerStyles, space, flexbox, typography);
 
-export default JFBannerWithStyle;
+export default SearchBarWithStyle;

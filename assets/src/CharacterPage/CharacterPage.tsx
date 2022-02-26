@@ -7,8 +7,7 @@ import Nav from "../Navbar/Nav";
 import Footer from "../Footer/Footer";
 import SearchBar from "../SearchBar/SearchBar";
 import { fleurimondColors } from "../theme";
-import { GlobalStyle, Container } from '../layout/global-style';
-
+import { GlobalStyle, Container } from "../layout/global-style";
 
 const baseBannerStyles = css({
   display: "block",
@@ -50,5 +49,5 @@ const JFCharacterCards = (props: any): JSX.Element => {
 const JFCharacterCardsWithStyle = styled(JFCharacterCards, {
   shouldForwardProp,
 })(baseBannerStyles, space, flexbox, typography);
-``
+``;
 export default JFCharacterCardsWithStyle;
