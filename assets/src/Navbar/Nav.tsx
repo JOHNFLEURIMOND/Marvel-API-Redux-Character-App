@@ -78,9 +78,6 @@ const JFNav = (props): JSX.Element => {
           <li>
             <Link to="/CharacterPage">Heros & Villians</Link>
           </li>
-          <li>
-            <Link to="/SignUp">About Us</Link>
-          </li>
         </ul>
       </header>
     </Container>
