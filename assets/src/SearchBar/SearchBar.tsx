@@ -11,7 +11,7 @@ import { RootStore } from "../../Store";
 import { GetMarvelCharacter } from "../actions/MarvelActions";
 import md5 from "js-md5";
 import uid2 from "uid2";
-import { Button, Input, Icon, Image } from 'semantic-ui-react';
+import { Button, Input, Icon, Image } from "semantic-ui-react";
 import { Header } from "../Header";
 
 import { fleurimondColors } from "../theme";
@@ -35,23 +35,23 @@ const baseBannerStyles = css({
     display: "block",
     width: "100%",
     height: "auto",
-    borderRadius: "inherit"
+    borderRadius: "inherit",
   },
   ".banner": {
     width: "100%",
-    boxSizing: 'border-box',
+    boxSizing: "border-box",
     backgroundImage: `url("https://terrigen-cdn-dev.marvel.com/content/prod/1x/mi_wallpaper_mas_mob_01.jpg")`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '100% 100%',
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "100% 100%",
     display: "block",
-    height: '50vw',
-    overflow: "hidden"
+    height: "50vw",
+    overflow: "hidden",
   },
   ".searchbar": {
     display: "flex",
     width: "100%",
-    height: '700px',
-    boxSizing: 'border-box',
+    height: "700px",
+    boxSizing: "border-box",
     justifyContent: "center",
     alignContent: "center",
     alignItems: "center",
@@ -59,7 +59,7 @@ const baseBannerStyles = css({
   },
   ".innie": {
     display: "flex",
-    boxSizing: 'border-box',
+    boxSizing: "border-box",
     justifyContent: "center",
     alignContent: "center",
     alignItems: "center",
@@ -69,20 +69,18 @@ const baseBannerStyles = css({
   },
 });
 
-
-
 const SearchBar = (props): JSX.Element => {
   const dispatch = useDispatch();
   const [marvelCharacterName, setMarvelCharacterName] = useState("");
   const marvelState = useSelector((state: RootStore) => state.marvelCharacter);
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setMarvelCharacterName(event.target.value);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
+    setMarvelCharacterName(event.target.value);
   const handleSubmit = () => dispatch(GetMarvelCharacter(marvelCharacterName));
   let UID = uid2(8);
   let keyNumber = md5(UID);
   {
     console.log("marvelState.marvelCharacter:  ", marvelState.marvelCharacter);
   }
-
 
   return (
     <Container {...props}>
@@ -92,20 +90,17 @@ const SearchBar = (props): JSX.Element => {
         animationOut="slideOutDown"
         isVisible
       >
-        <div className="banner">
-
-        </div>
+        <div className="banner"></div>
       </Animated>
-      <Header as="h1">
-        Character
-      </Header>
+      <Header as="h1">Character</Header>
       <div className="innie">
         <Input size="large" onChange={handleChange} />
         <Button
           variant="primary"
           aria-label="Primary Small Button"
           type="submit"
-          onClick={handleSubmit}>
+          onClick={handleSubmit}
+        >
           submit
         </Button>
       </div>
@@ -124,7 +119,15 @@ const SearchBar = (props): JSX.Element => {
                   >
                     <Card>
                       <Card.Content>
-                        <Image src={result.thumbnail.path + "." + result.thumbnail.extension} wrapped ui={true} />
+                        <Image
+                          src={
+                            result.thumbnail.path +
+                            "." +
+                            result.thumbnail.extension
+                          }
+                          wrapped
+                          ui={true}
+                        />
                       </Card.Content>
                       <Card.Content>
                         <Card.Header>{result.name}</Card.Header>
@@ -134,7 +137,7 @@ const SearchBar = (props): JSX.Element => {
                       </Card.Content>
                       <Card.Content extra>
                         <a>
-                          <Icon name='user' />
+                          <Icon name="user" />
                           {result.series.available} Series
                         </a>
                       </Card.Content>
@@ -146,7 +149,7 @@ const SearchBar = (props): JSX.Element => {
           </div>
         )}
       </div>
-    </Container >
+    </Container>
   );
 };
 

@@ -6,7 +6,7 @@ import {
 import { css, SerializedStyles } from "@emotion/core";
 import styled from "@emotion/styled";
 import shouldForwardProp from "@styled-system/should-forward-prop";
-import {  space } from "styled-system";
+import { space } from "styled-system";
 import { fleurimondColors } from "../theme";
 
 export interface VCHeaderProps extends SUIHeaderProps {
@@ -23,7 +23,7 @@ const baseHeaderStyles = css({
   justifyContent: "center",
   alignContent: "center",
   alignItems: "center",
-  display: "flex"
+  display: "flex",
 });
 
 const header1 = css({

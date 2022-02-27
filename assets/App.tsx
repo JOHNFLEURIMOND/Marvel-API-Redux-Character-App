@@ -2,7 +2,7 @@ import "react-app-polyfill/ie11";
 import React from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Nav from "./src/Navbar/Nav";
-  import Banner from "./src/Banner/Banner";
+import Banner from "./src/Banner/Banner";
 import CharacterPage from "./src/CharacterPage/CharacterPage";
 import SignUp from "./src/SignUp/SignUp";
 import { GlobalStyle, Container } from "./src/layout/global-style";

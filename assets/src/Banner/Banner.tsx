@@ -32,13 +32,13 @@ const baseBannerStyles = css({
 
   ".banner": {
     width: "100%",
-    boxSizing: 'border-box',
+    boxSizing: "border-box",
     backgroundImage: `url("https://terrigen-cdn-dev.marvel.com/content/prod/1x/mi_wallpaper_mas_mob_01.jpg")`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '100% 100%',
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "100% 100%",
     display: "block",
-    height: '50vw',
-    overflow: "hidden"
+    height: "50vw",
+    overflow: "hidden",
   },
 
   "*": {
@@ -55,9 +55,7 @@ const JFBanner = (props): JSX.Element => {
         animationOut="slideOutDown"
         isVisible
       >
-        <div className="banner">
-       
-        </div>
+        <div className="banner"></div>
       </Animated>
     </Container>
   );

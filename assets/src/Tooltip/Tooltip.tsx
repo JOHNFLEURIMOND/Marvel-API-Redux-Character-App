@@ -205,9 +205,10 @@ const baseTooltipStyles = css({
     background: "#191919",
   },
 
-  "&.ui.inverted.right.center.popup:before,&.ui.inverted.left.center.popup:before": {
-    background: "#191919",
-  },
+  "&.ui.inverted.right.center.popup:before,&.ui.inverted.left.center.popup:before":
+    {
+      background: "#191919",
+    },
 
   "&.ui.inverted.top.popup:before": {
     background: "#191919",

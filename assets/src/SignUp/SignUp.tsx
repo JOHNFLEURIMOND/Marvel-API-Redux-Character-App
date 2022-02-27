@@ -78,7 +78,7 @@ const formStyles = css({
   },
   form: {
     width: "295px",
-    height: "500px",
+    height: "300px",
     top: "16px",
     left: "73px",
     padding: "30px",
