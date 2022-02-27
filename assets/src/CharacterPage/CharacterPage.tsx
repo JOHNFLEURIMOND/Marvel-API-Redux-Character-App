@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 import shouldForwardProp from "@styled-system/should-forward-prop";
 import { space, flexbox, typography } from "styled-system";
 import Nav from "../Navbar/Nav";
-import Footer from "../Footer/Footer";
 import SearchBar from "../SearchBar/SearchBar";
 import { fleurimondColors } from "../theme";
 import { GlobalStyle, Container } from "../layout/global-style";
@@ -41,7 +40,6 @@ const JFCharacterCards = (props: any): JSX.Element => {
       <GlobalStyle />
       <Nav />
       <SearchBar />
-      <Footer />
     </Container>
   );
 };

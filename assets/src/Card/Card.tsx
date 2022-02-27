@@ -16,8 +16,8 @@ export interface JFCardProps extends SUICardProps {
 const baseCardStyles = css({
   "&.card": {
     width: "290px",
-    marginTop: "3rem",
-    padding: "3rem",
+    marginTop: "2rem",
+    padding: "1rem",
     backgroundColor: fleurimondColors.white,
     borderRadius: ".28571429rem",
     display: "inline-block",

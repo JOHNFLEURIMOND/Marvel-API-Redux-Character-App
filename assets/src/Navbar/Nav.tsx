@@ -11,11 +11,11 @@ import { fleurimondColors } from "../theme";
 const baseNavStyles = css({
   boxSizing: "border-box",
   fontSize: "20px",
-  height: "10vw",
-  color: fleurimondColors.leapingLemon,
+  height: "5rem",
+  color: fleurimondColors.white,
   textAlign: "center",
-  width: "100vw",
-  backgroundColor: fleurimondColors.buttons.darkBlue,
+  width: "100%",
+  backgroundColor: fleurimondColors.spideyRed,
   minHeight: "5vh",
   display: "flex",
   padding: 0,
@@ -30,7 +30,7 @@ const baseNavStyles = css({
   ".App-header-nav ": {
     fontSize: "20px",
     height: "55px",
-    color: fleurimondColors.leapingLemon,
+    color: fleurimondColors.white,
     textAlign: "center",
     padding: "20px",
     position: "absolute",
@@ -50,7 +50,7 @@ const baseNavStyles = css({
   },
 
   a: {
-    color: fleurimondColors.leapingLemon,
+    color: fleurimondColors.white,
     textDecoration: "none",
   },
 

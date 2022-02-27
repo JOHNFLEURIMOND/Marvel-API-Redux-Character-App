@@ -3,22 +3,26 @@ export const MARVEL_FAIL = "MARVEL_FAIL";
 export const MARVEL_SUCCESS = "MARVEL_SUCCESS";
 
 export type MarvelType = {
-  bio: MarvelCharacterBio[],
-  thumbnail: MarvelCharacterThumbnail,
+  results: MarvelCharacterBio[],
   comics: MarvelCharactersComics[]
 }
 
 export type MarvelCharacterBio = {
     name: string
     description: string
+    thumbnail: {
+      path: string
+      extension: string
+    }
+    series:{
+      available: number,
+      items:{
+        name:string,
+        url: string 
+      }
+    }
 }
 
-export type MarvelCharacterThumbnail = {
-  thumbnail: {
-    path: string
-    extension: string
-  }
-}
 
 export type MarvelCharactersComics = {
   comics: {
