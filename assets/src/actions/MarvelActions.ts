@@ -21,7 +21,7 @@ export const GetMarvelCharacter = (characters: string) => async (dispatch: Dispa
     const hash = md5.create();
     hash.update(timeStamp + apikeyPrivate + apikeyPublic)
     const limit = 100;
-    const apiUrl = `http://gateway.marvel.com/v1/public/characters?name=${characters}&ts=${timeStamp}&apikey=9d5da9314c00aba0c2c38a73b5070930&hash=${hash}&orderBy=name&limit=${limit}`;
+    const apiUrl = `https://gateway.marvel.com/v1/public/characters?name=${characters}&ts=${timeStamp}&apikey=9d5da9314c00aba0c2c38a73b5070930&hash=${hash}&orderBy=name&limit=${limit}`;
     const res = await axios.get(apiUrl);
     console.log("res.data: ", res.data.data)
     dispatch({
