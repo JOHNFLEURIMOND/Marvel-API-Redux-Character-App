@@ -7,8 +7,7 @@
  # How It's Works:white_check_mark::
 
 ## My Awesome Project 
-https://typescript-pokemon-api.netlify.app/
-
+https://marvel-api-react-redux-typescript.netlify.app/
 # Portfolio :open_file_folder::
 
 ** :computer:   WEBSITE:** [John Fleurimond](http://johnfleurimond.com)
