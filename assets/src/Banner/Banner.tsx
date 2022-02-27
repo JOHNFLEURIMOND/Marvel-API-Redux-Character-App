@@ -5,7 +5,6 @@ import { Animated } from "react-animated-css";
 import shouldForwardProp from "@styled-system/should-forward-prop";
 import { space, flexbox, typography } from "styled-system";
 import { Container } from "semantic-ui-react";
-import { Header } from "../Header";
 
 import { fleurimondColors } from "../theme";
 
@@ -31,14 +30,17 @@ const baseBannerStyles = css({
     paddingLeft: "250px",
   },
 
-  ".leftHalf": {
-    width: "50%",
-    display: "inline-block",
+  ".banner": {
+    width: "100%",
+    boxSizing: 'border-box',
+    backgroundImage: `url("https://terrigen-cdn-dev.marvel.com/content/prod/1x/mi_wallpaper_mas_mob_01.jpg")`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100% 100%',
+    display: "block",
+    height: '50vw',
+    overflow: "hidden"
   },
-  ".rightHalf": {
-    width: "50%",
-    display: "inline-block",
-  },
+
   "*": {
     fontFamily: "Montserrat, sans-serif",
   },
@@ -53,16 +55,9 @@ const JFBanner = (props): JSX.Element => {
         animationOut="slideOutDown"
         isVisible
       >
-        <div className="leftHalf">
-          <Header className="BannerHeader" as="h1" pt={200} pl={100}>
-            Marvel
-          </Header>
-          <Header className="BannerHeader2" as="h2" pt={50} pl={100}>
-            Characters
-          </Header>
+        <div className="banner">
+       
         </div>
-
-        <div className="rightHalf"></div>
       </Animated>
     </Container>
   );

@@ -48,7 +48,7 @@ const getInputStyles = (size): SerializedStyles => {
 
 const VCInput = (props: InputProps): JSX.Element => {
   const { size, ...rest } = props;
-  return <SUIInput {...rest} css={getInputStyles(size)} />;
+  return <SUIInput type="text" {...rest} css={getInputStyles(size)} />;
 };
 
 export default VCInput;

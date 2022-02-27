@@ -1,8 +1,8 @@
 {
   "include": ["assets", "types",],
-  "exclude": ["node_modules", "build"],
+  "exclude": ["node_modules", "public/build"],
   "compilerOptions": {
-    "outDir": "build/lib",
+    "outDir": "public/build/lib",
     "target": "es5",
     "module": "esnext",
     "lib": ["dom", "esnext"],

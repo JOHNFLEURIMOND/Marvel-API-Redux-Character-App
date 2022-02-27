@@ -1,6 +1,5 @@
 import { Dispatch } from "redux";
 import md5 from "js-md5";
-import uid2 from "uid2";
 import axios from 'axios';
 import {
   MARVEL_FAIL,
@@ -18,15 +17,16 @@ export const GetMarvelCharacter = (characters: string) => async (dispatch: Dispa
       characters,
       type: MARVEL_LOADING
     })
-    let timeStamp = uid2(8);
-    let hash = md5(timeStamp + apikeyPrivate + apikeyPublic);
+    const timeStamp = Number(new Date());;
+    const hash = md5.create();
+    hash.update(timeStamp + apikeyPrivate + apikeyPublic)
     const limit = 100;
     const apiUrl = `http://gateway.marvel.com/v1/public/characters?name=${characters}&ts=${timeStamp}&apikey=[REMOVED_MARVEL_API_CREDENTIAL]&hash=${hash}&orderBy=name&limit=${limit}`;
     const res = await axios.get(apiUrl);
-    console.log(res.data)
+    console.log("res.data: ", res.data.data)
     dispatch({
       type: MARVEL_SUCCESS,
-      payload: res.data
+      payload: res.data.data
     })
 
   } catch (e) {
