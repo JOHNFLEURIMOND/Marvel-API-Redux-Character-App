@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 import shouldForwardProp from "@styled-system/should-forward-prop";
 import { space, flexbox, typography } from "styled-system";
 import { Container } from "semantic-ui-react";
-import Icons from "./Icons";
 
 import { fleurimondColors } from "../theme";
 
@@ -44,7 +43,6 @@ const baseProjectsStyles = css({
 const JFProjects = (props): JSX.Element => {
   return (
     <Container {...props} pb={200}>
-      <Icons />
     </Container>
   );
 };
