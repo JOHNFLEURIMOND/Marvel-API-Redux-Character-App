@@ -1,7 +1,7 @@
 # :checkered_flag:What It Looks Like :checkered_flag:: 
 
 # How It's Made :nut_and_bolt:🔨 :hammer::wrench::
- This application built with Nodemon.
+ This application built with React, Redux, and Typescript.
 
 
  # How It's Works:white_check_mark::
