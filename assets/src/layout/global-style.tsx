@@ -1,4 +1,5 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from 'styled-components';
+import { fleurimondColors } from '../../utils/theme';
 
 export const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/
@@ -86,16 +87,14 @@ export const Container = styled.div`
   margin: 0;
   padding: 0;
   width: 100%;
-
+  height: 100%
+  display: flex;
+  
   @media (max-width: 400px) {
     padding: 0;
   }
   @media (max-width: 991px) {
     padding: 0;
-  }
-
-  @media (min-width: 1500px) {
-    max-width: 1500px;
   }
 
   @media (min-width: 1800px) {
