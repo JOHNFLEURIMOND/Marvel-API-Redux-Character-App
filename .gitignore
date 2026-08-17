@@ -24,3 +24,14 @@ node_modules/
 
 # macOS X files
 .DS_Store
+
+# local environment configuration
+.env
+.env.*
+!.env.example
+
+# local security scanner cache
+.cache_ggshield
+
+# generated production build
+/build/

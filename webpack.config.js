@@ -1,33 +1,30 @@
-const path = require("path");
-const webpack = require("webpack");
-const BUILD_DIR = path.resolve(__dirname, "./build");
-const APP_DIR = path.resolve(__dirname, "./assets");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+import path from "path";
+import webpack from "webpack";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
+const BUILD_DIR = path.resolve("build");
+const APP_DIR = path.resolve("assets");
 
-module.exports = {
+export default {
   mode: 'development',
   devtool: "source-map",
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
   },
-  entry: [`${APP_DIR}/Main.js`],
+  entry: `${APP_DIR}/Main.js`,
   output: {
-    path: path.resolve(BUILD_DIR),
+    path: BUILD_DIR,
     publicPath: "/",
     filename: "bundle.js",
   },
   devServer: {
-    contentBase: `${BUILD_DIR}/index.html`,
+    static: BUILD_DIR,
     port: 5000,
-
   },
-
   plugins: [
     new HtmlWebpackPlugin({
-      filename: path.resolve(`${BUILD_DIR}/index.html`),
-      // Load a custom template (lodash by default)
+      filename: "index.html",
       template: "index.html",
     }),
     new MiniCssExtractPlugin({
@@ -44,18 +41,14 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
         exclude: /node_modules/,
-        use: ['file-loader?name=[name].[ext]'] // ?name=[name].[ext] is only necessary to preserve the original file name
+        use: ['file-loader?name=[name].[ext]']
       },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: [
-          {
-            loader: "source-map-loader",
-          },
-          {
-            loader: "babel-loader",
-          }
+          "babel-loader",
+          "source-map-loader",
         ],
       },
       {
